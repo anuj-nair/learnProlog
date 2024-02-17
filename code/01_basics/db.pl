@@ -11,21 +11,20 @@ happy(bill).
 with_albert(alice).
 
 runs(albert) :- happy(albert).
+
 dances(alice) :- 
   happy(alice),
   with_albert(alice).
 
 % Predicates
-does_alice_dance :- dances(alice), 
+does_alice_dance :- dances(alice),  
 % Printing in Prolog 
   write('When Alice is happy and with Albert she dances.').
 
+near_water(bob).
 
-swims(bob) :-
-  happy(bob).
-
-swims(bob) :-
-  near_water(bob).
+swims(X) :-
+  (happy(X); near_water(X)).
   
 
 male(albert).
